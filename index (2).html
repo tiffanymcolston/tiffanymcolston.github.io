@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiffany Colston — Branded Content Producer & Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0e0e0e;
+    --dark: #161616;
+    --card: #1c1c1c;
+    --border: #2a2a2a;
+    --gold: #c9a84c;
+    --gold-light: #e0c06a;
+    --white: #f0ede6;
+    --muted: #888;
+    --tag-bg: #252525;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { color: var(--gold-light); text-decoration: underline; }
+
+  /* HEADER */
+  header {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  header .name {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  header .title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  header .networks {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  header .intro {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    color: #b8b4ac;
+    line-height: 1.75;
+  }
+
+  header .contact {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  header .contact a { color: var(--muted); }
+  header .contact a:hover { color: var(--gold); }
+
+  /* NAV */
+  nav {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 14px 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* MAIN */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    padding-top: 64px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+
+  /* SEGMENT CARD */
+  .segment {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .segment-meta {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid #333;
+  }
+
+  .segment-client {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .segment-name {
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: auto;
+    font-style: italic;
+    font-family: 'Lora', serif;
+  }
+
+  /* PAIRED LAYOUT */
+  .segment-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+  }
+
+  @media (max-width: 760px) {
+    .segment-body { grid-template-columns: 1fr; }
+  }
+
+  /* VIDEO SIDE */
+  .video-side {
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    background: #000;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .video-caption {
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    line-height: 1.5;
+  }
+
+  .video-caption strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .video-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 5px 12px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .video-link:hover {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  /* SCRIPT SIDE */
+  .script-side {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .script-label {
+    padding: 12px 20px;
+    background: #181818;
+    border-bottom: 1px solid var(--border);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .script-label span {
+    color: var(--gold);
+  }
+
+  .script-annotation {
+    padding: 14px 20px;
+    background: #131313;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    color: #888;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .script-annotation strong {
+    color: #aaa;
+    font-style: normal;
+  }
+
+  .script-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 520px;
+    flex: 1;
+  }
+
+  .script-content::-webkit-scrollbar { width: 4px; }
+  .script-content::-webkit-scrollbar-track { background: var(--card); }
+  .script-content::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .script-block {
+    margin-bottom: 20px;
+  }
+
+  .script-speaker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .script-cue {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    border-left: 2px solid #2a2a2a;
+  }
+
+  .script-text {
+    font-family: 'Lora', serif;
+    font-size: 13.5px;
+    color: #c8c4bc;
+    line-height: 1.8;
+  }
+
+  /* SIMPLE CARD (no script) */
+  .segment-simple .segment-body {
+    grid-template-columns: 1fr;
+  }
+
+  .segment-simple .video-side {
+    border-right: none;
+  }
+
+  .coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #444;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-left: 1px solid var(--border);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  footer strong {
+    color: var(--gold);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="name">Tiffany Colston</div>
+  <div class="title">Branded Content Producer &amp; Writer</div>
+  <div class="networks">NBC Affiliate WFLA Daytime &nbsp;•&nbsp; Lifetime &nbsp;•&nbsp; 6+ Years &nbsp;•&nbsp; 1,200+ Segments</div>
+  <p class="intro">Producer and writer specializing in high-volume branded content for national broadcast. I bring brand briefs to life from concept through delivery — scripting, talent direction, shoot coordination, and post workflow — for clients across lifestyle, beauty, food &amp; entertaining, fashion, pet care, tech, and more.</p>
+  <div class="contact">
+    <a href="mailto:tiffanymcolston@gmail.com">tiffanymcolston@gmail.com</a> &nbsp;•&nbsp; 407-416-1056
+  </div>
+</header>
+
+<nav>
+  <a href="#digital">Digital &amp; Social</a>
+  <a href="#travel">Travel</a>
+  <a href="#lifestyle">Lifestyle &amp; Beauty</a>
+  <a href="#food">Food &amp; Entertaining</a>
+  <a href="#petcare">Pet Care</a>
+  <a href="#fashion">Fashion</a>
+</nav>
+
+<main>
+
+  <!-- DIGITAL & SOCIAL -->
+  <section class="section" id="digital">
+    <div class="section-header">
+      <div class="section-title">Digital &amp; Social</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded TikTok content produced for consumer lifestyle brands.</p>
+
+    <div class="segment segment-simple">
+      <div class="segment-meta">
+        <span class="tag">Lifestyle</span>
+        <span class="segment-client">SNAP</span>
+        <span class="segment-name">Hand Sanitizer — Branded TikTok Content</span>
+      </div>
+      <div class="segment-body">
+        <div class="video-side" style="border-right: none;">
+          <div class="video-caption" style="padding: 20px;">
+            <strong>SNAP Hand Sanitizer — Branded TikTok Content</strong>
+            Branded TikTok video produced for SNAP hand sanitizer. Scripted, produced, and promoted. Seeded with paid promotion; majority of traction driven organically.
+            <br><br>
+            <span style="color: var(--gold); font-size: 12px; font-weight: 700;">&#9654; 34.5K views &nbsp;&#9829; 2K likes</span>
+            <br>
+            <a class="video-link" href="https://www.tiktok.com/@handsandbody/video/7413136674885995818" target="_blank">Watch on TikTok &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="segment segment-simple">
+      <div class="segment-meta">
+        <span class="tag">Lifestyle</span>
+        <span class="segment-client">SNAP</span>
+        <span class="segment-name">Eucalyptus &amp; Mint — Branded TikTok Content</span>
+      </div>
+      <div class="segment-body">
+        <div class="video-side" style="border-right: none;">
+          <div class="video-caption" style="padding: 20px;">
+            <strong>SNAP Hand Sanitizer — Eucalyptus &amp; Mint</strong>
+            Creator-style branded TikTok produced for the @handsandbody account featuring SNAP's eucalyptus &amp; mint hand sanitizer. Scripted, produced, and promoted. Seeded with paid promotion; majority of traction driven organically.
+            <br><br>
+            <span style="color: var(--gold); font-size: 12px; font-weight: 700;">&#9654; 16.1K views &nbsp;&#9829; 1.2K likes</span>
+            <br>
+            <a class="video-link" href="https://www.tiktok.com/@handsandbody/video/7410981331074813230" target="_blank">Watch on TikTok &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAVEL -->
+  <section class="section" id="travel">
+    <div class="section-header">
+      <div class="section-title">Travel</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded travel segments produced for national broadcast on NBC affiliate WFLA's Daytime.</p>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Travel</span>
+        <span class="segment-client">Visit Florida</span>
+        <span class="segment-name">Vacation Hotspots — The Sunshine State</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/812509051" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>Vacation Hotspots — The Sunshine State</strong>
+            A branded travel segment spotlighting Florida vacation destinations, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/showcase/10293225?video=812509051" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-annotation">
+            <strong>How to read this script:</strong> Broadcast scripts are formatted by speaker role. <em>HOST</em> is the show's anchor who introduces the segment live on air. <em>{TAKE PKG}</em> is a production cue to roll pre-recorded footage. <em>JENNIFER</em> is the on-set lifestyle expert delivering the branded content directly to camera.
+          </div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Host</div>
+              <div class="script-text">If you want to have the time of your life with your family this summer, Lifestyle Expert Jennifer Bonner is on the show to map out the perfect sun-soaked destinations right here in The Sunshine State. Let's watch:</div>
+            </div>
+
+            <div class="script-cue">{TAKE PKG}</div>
+
+            <div class="script-block">
+              <div class="script-speaker">Jennifer</div>
+              <div class="script-text">
+                Whether it's your first time visiting or you already live here, Florida has incredible attractions that make it an ideal spot for a memorable summer vacation. From the bustling cities of Tampa, Orlando and Miami to serene retreats from coast to coast, a trip in this sun-kissed state is an experience like no other!
+                <br><br>
+                Living here myself, I've been all over. I've gone on camping trips in many of Florida's lush, green state parks, seen dolphins swimming along the panhandle's emerald waters, and experienced the vibrant city of Miami at night. But there's still so much more to see!
+                <br><br>
+                If you're a nature lover like me, the state offers over 700 freshwater springs, 825 miles of beaches, and more than 1,300 natural trails for a family-filled adventure. Saddle up in Ocala and ride horseback or zipline in the trees across Florida's luscious terrains.
+                <br><br>
+                Along our serene waterways, you'll glimpse into the side of nature you don't quite see anywhere else. You can kayak through mangroves and paddleboard among Manatees. Or, hop on a charter boat and grab the catch of the day in the World's Luckiest Fishing Village in Destin and Fort Walton Beach. There are over 20 edible game fish you can catch!
+                <br><br>
+                Beyond its outdoor fun, the Sunshine State offers plenty of exciting attractions that are inclusive of families with disabilities, too. Wonderworks in Orlando allows kiddos on the spectrum to explore the fascination of science with indoor play, while Zoo Tampa and Florida Aquarium in Tampa Bay bring on the spectacle of wildlife and autism-friendly exhibits to discover.
+                <br><br>
+                For history buffs with additional needs, The Cummer Museum in Jacksonville offers large print guides, pre-scheduled ASL services, and touch tours for those who are blind or have low vision. These are a few of the many attractions across the state that accommodate accessibility for visitors, with experiences that have no limit to the fun.
+                <br><br>
+                Plus, Florida loves your pets, too, and there are tons of hotels, restaurants and attractions that let them be a part of your special trip. They're a part of the family, after all!
+                <br><br>
+                If you want to experience something memorable with your family this summer, book your stay in The Sunshine State. To plan your Florida vacation and learn more, check out VISITFLORIDA.com. We hope to see you soon!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE & BEAUTY -->
+  <section class="section" id="lifestyle">
+    <div class="section-header">
+      <div class="section-title">Lifestyle &amp; Beauty</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded lifestyle segments produced for national broadcast on NBC affiliate WFLA's Daytime.</p>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Lifestyle / Beauty</span>
+        <span class="segment-client">Olay &bull; Secret</span>
+        <span class="segment-name">Summer Self-Care: New Beauty Finds</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1093107413" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>Summer Self-Care: New Beauty Finds</strong>
+            A branded beauty segment showcasing Olay and Secret's summer self-care product lines, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/1093107413" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Host</div>
+              <div class="script-text">If your summer routine could use a refresh, don't go anywhere—Lifestyle Expert Jacky Herrera joins us with a little sparkle for your self-care lineup. Let's take a look:</div>
+            </div>
+
+            <div class="script-cue">{TAKE PKG}</div>
+
+            <div class="script-block">
+              <div class="script-speaker">Jacky</div>
+              <div class="script-text">
+                Summer smells like the first pop of a fizzy soda, sweet strawberries in the sun, and that refreshing moment when your skin hits cool water after a hot day. And now, that feeling is bottled—literally—thanks to the new, limited-edition Summer Fizz Collection from two beauty icons: Olay and Secret.
+                <br><br>
+                Whether you're racing through summer errands or headed to a girls' night under the stars, this is the kind of body care that makes you feel ready for anything. Olay's serum-infused body washes treat your skin with a nourishing blend of hyaluronic serum complex, niacinamide, pro-glycerin and lipids—all while refreshing your shower routine with irresistible, fruity scents like Strawberry Fizz. Thanks to the new Olay Summer Fizz Body Wash collection, your skin will look visibly supple and dewy, without harsh parabens and phthalates.
+                <br><br>
+                And when it comes to staying dry through all that heat and hustle, Secret Clinical Antiperspirant Strawberry Collection is your summer must-have. Infused with pro-hyaluronic acid, this multitasking MVP offers up to 72 hours of protection from three types of sweat: stress, heat and activity. Available in three irresistibly summer scents, it's tough on wetness, but gentle on skin – thanks to its pH-balanced, dermatologist-tested formula.
+                <br><br>
+                Together, Olay and Secret are bringing a summer glow-up to your daily routine—no overhauls required. Just a few fresh swaps, and suddenly your bathroom feels like a summer spa. And with price points starting under $10, it's easy to stock up on your favorites.
+                <br><br>
+                Look for the Olay Body Wash and Secret Clinical Antiperspirant Summer Fizz Collection online and at major retailers nationwide. But don't wait—this Summer Fizz won't be bubbling around forever!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD & ENTERTAINING -->
+  <section class="section" id="food">
+    <div class="section-header">
+      <div class="section-title">Food &amp; Entertaining</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded food and lifestyle segments produced for national broadcast on NBC affiliate WFLA's Daytime.</p>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Food &amp; Entertaining</span>
+        <span class="segment-client">Smirnoff</span>
+        <span class="segment-name">Pink Lemonade Summer Cocktails</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/561587175" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>Smirnoff Pink Lemonade — Summer Cocktails</strong>
+            A branded cocktail segment featuring Smirnoff's Pink Lemonade vodka line, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/561587175" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Host</div>
+              <div class="script-text">Can pink lemonade really make your summer better? Lifestyle Expert Jennifer Bonner thinks so! Today she joins us with a few delicious cocktails to add to any sunny day occasion. Let's watch:</div>
+            </div>
+
+            <div class="script-cue">{TAKE PKG}</div>
+
+            <div class="script-block">
+              <div class="script-speaker">Jennifer</div>
+              <div class="script-text">
+                When it's a perfect sunny day, nothing complements the warmer weather better than a cold glass of pink lemonade. For me, it's the perfect blend of tangy sweetness and happiness in a cup. Then I discovered a better way to enjoy my favorite summer beverage....as a cocktail!
+                <br><br>
+                I couldn't keep these drinks to myself, so today we're checking out two delicious summer cocktails you gotta try, made with the help of our friends from Smirnoff! Featuring their new Pink Lemonade vodka specialty, you can enjoy the refreshing taste of lemonade you know and love. These fun cocktails are perfect for backyard bashes with friends, beach days, BBQs, or simply just because! The best part? The liquid itself is pink!
+                <br><br>
+                This first cocktail is on its way to being a new summer crowd favorite… It's the Tea Punch! It combines fruity juices with refreshing tea to take your summer festivities up a notch. Simply fill a punch bowl or carafe with ice, 2 cups of Smirnoff Pink Lemonade, 25 oz of Watermelon Juice, 25 oz of Fresh Lemonade, and 10 oz of Kombucha. Then add a pop of color and garnish with fresh seasonal fruit to really bring this vibrant cocktail full circle!
+                <br><br>
+                Next up is Smirnoff's Froze cocktail, a perfect way to cool off in the heat. This yummy, adult slushy uses only three ingredients and can be made in just minutes. All you need to do is add a cup of ice to your blender, 1.5 oz of Smirnoff Pink Lemonade, a half-ounce of Sauvignon Blanc, and 1 oz of raspberry syrup. Then get blending! Once it's nice and smooth, pour into your rock glass and garnish with a fresh raspberry or sprig of mint.
+                <br><br>
+                So this summer celebrate your iconic summer moments and get your pink on with Smirnoff's new Pink Lemonade! Shop their complete Pink Lemonade line nationwide at a retailer near you. And as always, please drink responsibly.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Food &amp; Entertaining</span>
+        <span class="segment-client">Wisconsin Cheese</span>
+        <span class="segment-name">Game Day Entertaining</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/672048444" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>Wisconsin Cheese — Game Day Entertaining</strong>
+            A branded food segment showcasing Wisconsin Cheese's lineup for game day entertaining, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/showcase/9234559?video=672048444" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Jennifer</div>
+              <div class="script-text">
+                No big game celebration is complete without delicious snacks lining the table. And as you cheer on your favorite team, be sure to add Wisconsin Cheese to your starting lineup this game day!
+                <br><br>
+                Wisconsin is the State of Cheese. It's the MVP of cheesemakers, winning more awards than anywhere on the planet. And if you're looking for delicious ways to carry you through to the fourth quarter, I know a few cheesy recipes to add to the table.
+                <br><br>
+                First up, you really can't go wrong with this all-star Bloody Mary Cheeseboard. Filled with Wisconsin Aged Cheddar, Havarti, Cheddar Blue, Provolone, Mozzarella, and Fresh Cheese Curds, this will delight your taste buds from kickoff through the post-game! I've loaded my board with bloody mary favorites like spicy chicken wings, sausage, popcorn, and crackers, but you can add just about anything you want!
+                <br><br>
+                Next, if you're looking for that classic stadium snack, there's no need to wait in line for this gameday appetizer. Check out these soft parmesan pretzels. Homemade and sprinkled in Wisconsin's signature Parmesan cheese, these pretzels also pair perfectly with this touchdown-worthy warm beer cheese dip. It's super easy to make. All you need is Crystal Farms Cream Cheese, Wisconsin Pepperjack, some Cheddar, or you can even add your own favorite for a delightful dip. Once you taste this winner, it might even make you and your loved ones do an endzone dance.
+                <br><br>
+                So kickoff the big game with Wisconsin Cheese! Pick up your favorites at your local Whole Foods, and be sure to look for the Proudly Wisconsin badge to trust you're getting a proven winner! For more gameday recipe inspiration and perfect pairing suggestions, visit WisconsinCheese.com and fuel your fan frenzy the right way!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PET CARE -->
+  <section class="section" id="petcare">
+    <div class="section-header">
+      <div class="section-title">Pet Care</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded pet care segments produced for national broadcast on NBC affiliate WFLA's Daytime.</p>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Pet Care</span>
+        <span class="segment-client">PetSafe</span>
+        <span class="segment-name">ScoopFree — Happy, Healthy Pets</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/481781549" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>PetSafe ScoopFree — Happy, Healthy Pets</strong>
+            A branded pet care segment featuring PetSafe's ScoopFree self-cleaning litter system, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/showcase/7822371?video=481781549" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Jennifer</div>
+              <div class="script-text">
+                Owning a cat has lots of perks: they're cuddly, quirky, fit snug in your lap, and they're easy to look after. But let's talk about their litter box. You know, the one you have to crouch over and dig through every week to ensure they have a clean space? It's a messy job and even more work when you have multiple cats. Sometimes, you might even put off cleaning it. But then your cat looks at you after sniffing their litter box, and a special kind of guilt creeps in when you know it's overdue for a cleaning. That guilt you're feeling is really a scientific term called....poo-crastination.
+                <br><br>
+                If you've experienced this weird phenomenon, it's time to end that poo-crastinating guilt this holiday and give you and your cat a ScoopFree Self Cleaning Litter Box from PetSafe!
+                <br><br>
+                This hands-free litter box allows you to say goodbye to scooping, cleaning, and refilling it yourself...for weeks! It's a must-have for any cat owner, and you'll never go back to a traditional litter box again.
+                <br><br>
+                With the self-cleaning litter box, you'll no longer experience bad odors wafting in the air, sweeping the floor, or inhaling the dust from litter ever again. With multiple varieties available, the special crystal litter has great odor control, which removes all smells by absorbing urine and dehydrating solid waste up to 5 times better than traditional litter. Even better, the crystal litter is 99 percent dust-free, and won't stick to your cat's paws, so you can have a cleaner, fresher home all around!
+                <br><br>
+                After your cat uses the litter box, the rake automatically sweeps solid waste into the covered waste trap, so you don't have to touch it, see it or smell it. The ScoopFree litter box comes with a disposable litter tray, which has a plastic lining to prevent leaking. Once the tray is used up after several weeks, simply place the lid on top and throw it away. It's that easy!
+                <br><br>
+                The sleek design features neutral gray colors that blend seamlessly with modern home décor. There's even a health counter that tracks how many times your furry feline uses the box, which is a convenient way to detect early signs of health issues, such as urinary tract infections.
+                <br><br>
+                So quit poo-crastinating for good this holiday and make the switch to a ScoopFree Self-Cleaning Litter Box from PetSafe! To purchase yours and learn more, visit ScoopFree.com today!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FASHION & LIFESTYLE -->
+  <section class="section" id="fashion">
+    <div class="section-header">
+      <div class="section-title">Fashion &amp; Lifestyle</div>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-desc">Branded fashion and lifestyle segments produced for national broadcast on NBC affiliate WFLA's Daytime.</p>
+
+    <div class="segment">
+      <div class="segment-meta">
+        <span class="tag">Fashion / Lifestyle</span>
+        <span class="segment-client">Tommy Bahama</span>
+        <span class="segment-name">Gifts for Him, Her &amp; Home</span>
+      </div>
+      <div class="segment-body">
+
+        <div class="video-side">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1139392816" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <strong>Tommy Bahama — Gifts for Him, Her &amp; Home</strong>
+            A branded holiday gift guide segment showcasing Tommy Bahama's clothing, home goods, and lifestyle collection, produced for NBC affiliate WFLA's Daytime morning show. Full production from brief through on-set delivery.
+            <br>
+            <a class="video-link" href="https://vimeo.com/showcase/11990939?video=1139392816" target="_blank">Watch on Vimeo ↗</a>
+          </div>
+        </div>
+
+        <div class="script-side">
+          <div class="script-label">As Written &nbsp;<span>Full Broadcast Script</span></div>
+          <div class="script-content">
+
+            <div class="script-block">
+              <div class="script-speaker">Host</div>
+              <div class="script-text">Celebrate the season in style with cozy, chic looks and festive touches for every part of your home. Lifestyle Expert Jennifer Bonner shares easy ways to bring warmth, comfort, and holiday cheer to every moment. Let's watch:</div>
+            </div>
+
+            <div class="script-cue">{TAKE PKG}</div>
+
+            <div class="script-block">
+              <div class="script-speaker">Jennifer</div>
+              <div class="script-text">
+                Holiday style blends comfort with celebration, and Tommy Bahama captures that balance beautifully. From clothing to décor, every detail reflects relaxed sophistication and a festive, coastal spirit. Whether getting ready for gatherings or enjoying quiet nights in, these pieces bring warmth and easy elegance to the season.
+                <br><br>
+                For women, Tommy Bahama's Palm Voyage collection feels polished yet laid-back, designed to move seamlessly from errands to evenings out. The funnel neck zip-front sweatshirt pairs perfectly with wide-leg or pintuck pants for a soft, modern look that's both versatile and refined. Cozy favorites like the Fleece Popover Sweatshirt and Malibu Chenille V-Neck Sweater add texture and warmth, wrapping soft fabrics and thoughtful details into timeless silhouettes that capture the relaxed luxury of the brand.
+                <br><br>
+                For men, the redesigned Boracay Island Chino combines comfort and style with a modern fit and a soft finish that works from day to night. Paired with one of Tommy Bahama's signature silk camp shirts featuring embroidered artwork, it's a look that feels classic and confident. Layer on the Highland Rocker Leather Jacket for an added touch of sophistication, crafted with clean lines and quality design. The Montego Beach and Flipview half zips bring casual comfort to his wardrobe, with reversible styles and sun-washed colors that keep things easygoing and polished.
+                <br><br>
+                Holiday comfort continues beyond the wardrobe with matching family pajamas in cheerful prints that bring everyone together — including options for kids and even pets. The home collection carries the same island-inspired warmth, featuring the Patchwork Holiday assortment with festive mugs, appetizer plates, and bar towels that add charm to every gathering. Plush throws in coastal hues invite cozy evenings, while Tommy Bahama's signature fragrances for men and women capture the fresh scent of escape.
+                <br><br>
+                The Trinidad x Tommy Bahama Island Collection offers cigars and accessories like the Marlin Bar Ashtray, Leather Travel Humidor, and Ashton 3 Cigar Case Cutter, all great for gifting. The Marlin Bar Ashtray brings island style home with a bold, polished design. The Leather Travel Cigar Humidor keeps cigars fresh with sleek craftsmanship. The Ashton 3 Cigar Case Cutter adds refined convenience for carrying and enjoying cigars in style.
+                <br><br>
+                Celebrate the season with coastal sophistication from Tommy Bahama. Explore the full collection at tommybahama.com.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Tiffany Colston</strong>
+  Branded Content Producer &amp; Writer &nbsp;•&nbsp; <a href="mailto:tiffanymcolston@gmail.com">tiffanymcolston@gmail.com</a> &nbsp;•&nbsp; 407-416-1056
+</footer>
+
+</body>
+</html>
